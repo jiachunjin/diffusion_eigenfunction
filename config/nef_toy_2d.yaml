@@ -1,0 +1,32 @@
+training:
+  iters: 100000
+  eval_iters: 100
+  save_iters: 10000
+  ema: False
+  ema_rate:
+  resume: False
+  resume_path:
+
+data:
+  type: '2d' #['2d', 'grey', 'rgb']
+  dim: &dim 2
+  train_batch: 500
+  test_batch: 1000
+  num_workers: 2
+  rescale: False
+
+nef_net:
+  # model_type: 'MLP' #['MLP', 'UNet']
+  k: 2
+  input_size: *dim
+  # hidden_dim: [64, 256, 1024, 256, 64]
+  # dropout_p: 0.0
+
+optimizer:
+  type: 'Adam' # ['Adam']
+  weight_decay: 0.000
+  optimizer: "Adam"
+  lr: 0.0001
+  beta1: 0.9
+  amsgrad: False
+  eps: 0.00000001
